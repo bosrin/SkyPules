@@ -16,7 +16,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "chmod +x node_modules/.bin/react-scripts",
     "build": "react-scripts build",
     "build:ci": "CI=false react-scripts build",
     "lint": "eslint src/**/*.{js,jsx}"
@@ -25,11 +24,7 @@
     "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
