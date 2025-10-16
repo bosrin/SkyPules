@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./News.css";
 import { AlertTriangle, CloudRain, Sun, Wind } from "lucide-react";
 
@@ -28,6 +29,7 @@ const News = () => {
             "Heavy rains and thunderstorms expected today. Stay indoors and avoid travel if possible.",
           type: "alert",
           date: "2025-10-11T08:30:00",
+          link: "/news/severe-thunderstorm-dhaka",
         },
         {
           title: "Sunny Weather in Chittagong",
@@ -35,6 +37,7 @@ const News = () => {
             "Clear skies and sunny conditions expected throughout the day. Perfect weather for outdoor activities.",
           type: "sunny",
           date: "2025-10-11T07:00:00",
+          link: "/news/sunny-chittagong",
         },
         {
           title: "Windy Conditions in Sylhet",
@@ -42,6 +45,7 @@ const News = () => {
             "Expect strong gusts of wind up to 40 km/h in Sylhet region. Secure loose objects outdoors.",
           type: "wind",
           date: "2025-10-11T06:45:00",
+          link: "/news/windy-sylhet",
         },
         {
           title: "Rain Alert in Barishal",
@@ -49,6 +53,7 @@ const News = () => {
             "Light to moderate rain expected, carry umbrellas if going outside. Possible waterlogging in low areas.",
           type: "rain",
           date: "2025-10-11T05:20:00",
+          link: "/news/rain-barishal",
         },
       ];
       setNewsList(data);
@@ -110,7 +115,9 @@ const News = () => {
                 <h3 className="news-heading">{news.title}</h3>
                 <p className="news-desc">{news.description}</p>
                 <p className="news-date">{timeAgo(news.date)}</p>
-                <a href="#" className="news-readmore">Read More →</a>
+                <Link to={news.link} className="news-readmore">
+                  Read More →
+                </Link>
               </div>
             </div>
           ))}
