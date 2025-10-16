@@ -15,9 +15,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
+  "start": "react-scripts start",
+  "prebuild": "chmod +x node_modules/.bin/react-scripts",
+  "build": "react-scripts build"
+}
+,
   "eslintConfig": {
     "extends": ["react-app", "react-app/jest"]
   },
